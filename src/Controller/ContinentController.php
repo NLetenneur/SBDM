@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/continent')]
 class ContinentController extends AbstractController
 {
-    #[Route('/', name: 'continent_index', methods: ['GET'])]
+    #[Route('/', name: 'app_continent_index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $continents = $entityManager

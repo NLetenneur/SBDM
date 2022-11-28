@@ -4,23 +4,32 @@
 
 {% block body %}
     <h1>Liste des continents</h1>
-    <a href="{{ path('app_continent_new') }}">Nouveau continent</a>
+    <a role="button" class="btn btn-info mb-2" href="{{ path('app_continent_new') }}">
+                    Nouveau continent
+                </a>
        <table class="table table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>Id du continent</th>
-                <th>Nom du continent</th>
-                <th>Actions</th>
+                <th class="text-center">Id du continent</th>
+                <th class="text-center">Nom du continent</th>
+                <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for continent in continents %}
             <tr>
-                <td>{{ continent.idContinent }}</td>
-                <td>{{ continent.nomContinent }}</td>
-                <td>
-                    <a href="{{ path('app_continent_show', {'idContinent': continent.idContinent}) }}">show</a>
-                    <a href="{{ path('app_continent_edit', {'idContinent': continent.idContinent}) }}">edit</a>
+                <td class="text-center">{{ continent.idContinent }}</td>
+                <td class="text-center">{{ continent.nomContinent }}</td>
+                <td class="text-center">
+                <a role="button" class="btn btn-light" href="{{ path('app_continent_show', {'idContinent': continent.idContinent}) }}">
+                    Voir
+                </a>
+                <a role="button" class="btn btn-info" href="{{ path('app_continent_edit', {'idContinent': continent.idContinent}) }}">
+                    Modifier
+                </a>
+                <a role="button" class="btn btn-primary" href="{{ path('app_continent_delete', {'idContinent': continent.idContinent}) }}">
+                    Supprimer
+                </a>      
                 </td>
             </tr>
         {% else %}
