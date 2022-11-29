@@ -3,24 +3,24 @@
 {% block title %}Pays{% endblock %}
 
 {% block body %}
-    <h1>Pays</h1>
+    <h1>Détails d'un pays</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>IdPays</th>
+                <th>Id du pays</th>
                 <td>{{ pay.idPays }}</td>
             </tr>
             <tr>
-                <th>NomPays</th>
+                <th>Nom du pays</th>
                 <td>{{ pay.nomPays }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_pays_index') }}">back to list</a>
+    <a role="button" class="btn btn-light mb-2" href="{{ path('pays_index') }}">Retour à la liste</a> <br>
 
-    <a href="{{ path('app_pays_edit', {'idPays': pay.idPays}) }}">edit</a>
+    <a role="button" class="btn btn-info mb-2" href="{{ path('app_pays_edit', {'idPays': pay.idPays}) }}">Modifier</a>
 
     {{ include('pays/_delete_form.html.twig') }}
 {% endblock %}

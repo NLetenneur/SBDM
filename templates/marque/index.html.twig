@@ -3,9 +3,10 @@
 {% block title %}Marque index{% endblock %}
 
 {% block body %}
-    <h1>Marque index</h1>
-
-    <table class="table table-bordered table-hover">
+    <h1>Liste des marques</h1>
+    <a role="button" class="btn btn-info mb-2" href="{{ path('app_marque_new') }}">Nouvelle marque</a>
+    <div style="height: 400px" class="table-responsive d-inline-block" overflow: auto>
+    <table class="table table-bordered border-light table-hover">
         <thead class="thead-dark">
             <tr>
                 <th>IdMarque</th>
@@ -19,8 +20,9 @@
                 <td>{{ marque.idMarque }}</td>
                 <td>{{ marque.nomMarque }}</td>
                 <td>
-                    <a href="{{ path('app_marque_show', {'idMarque': marque.idMarque}) }}">show</a>
-                    <a href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">edit</a>
+                    <a role="button" class="btn btn-light" href="{{ path('app_marque_show', {'idMarque': marque.idMarque}) }}">Voir</a>
+                    <a role="button" class="btn btn-info" href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">Modifier</a>
+                    <a role="button" class="btn btn-primary" href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">Supprimer</a>
                 </td>
             </tr>
         {% else %}
@@ -30,6 +32,6 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
 
-    <a href="{{ path('app_marque_new') }}">Create new</a>
 {% endblock %}

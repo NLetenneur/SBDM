@@ -36,7 +36,7 @@ class PaysController extends AbstractController
             $entityManager->persist($pay);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_pays_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('pays_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('pays/new.html.twig', [
@@ -62,7 +62,7 @@ class PaysController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_pays_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('pays_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('pays/edit.html.twig', [
@@ -79,6 +79,6 @@ class PaysController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_pays_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('pays_index', [], Response::HTTP_SEE_OTHER);
     }
 }
