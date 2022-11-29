@@ -44,6 +44,8 @@ class Couleur
 
         return $this;
     }
-
+    public function __toString() {
+        return $this->nomCouleur;
+    }
 
 }

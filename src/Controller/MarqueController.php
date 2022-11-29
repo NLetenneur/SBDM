@@ -36,7 +36,7 @@ class MarqueController extends AbstractController
             $entityManager->persist($marque);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_marque_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('marque_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('marque/new.html.twig', [
@@ -62,7 +62,7 @@ class MarqueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_marque_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('marque_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('marque/edit.html.twig', [
@@ -79,6 +79,6 @@ class MarqueController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_marque_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('marque_index', [], Response::HTTP_SEE_OTHER);
     }
 }
