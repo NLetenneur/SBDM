@@ -1,26 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Pays index{% endblock %}
+{% block title %}Pays{% endblock %}
 
 {% block body %}
-    <h1>Pays index</h1>
-
+    <h1>Liste des pays</h1>
+    <a role="button" class="btn btn-info mb-2" href="{{ path('app_pays_new') }}">Nouveau pays</a>
     <table class="table table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>IdPays</th>
-                <th>NomPays</th>
-                <th>actions</th>
+                <th class="text-center">Id du pays</th>
+                <th class="text-center">Nom du pays</th>
+                <th class="text-center">Continent</th>
+                <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for pay in pays %}
             <tr>
-                <td>{{ pay.idPays }}</td>
-                <td>{{ pay.nomPays }}</td>
-                <td>
-                    <a href="{{ path('app_pays_show', {'idPays': pay.idPays}) }}">show</a>
-                    <a href="{{ path('app_pays_edit', {'idPays': pay.idPays}) }}">edit</a>
+                <td class="text-center">{{ pay.idPays }}</td>
+                <td class="text-center">{{ pay.nomPays }}</td>
+                <td class="text-center">{{ pay.idContinent }}</td>
+                <td class="text-center">
+                    <a role="button" class="btn btn-light" href="{{ path('app_pays_show', {'idPays': pay.idPays}) }}">Voir</a>
+                    <a role="button" class="btn btn-info" href="{{ path('app_pays_edit', {'idPays': pay.idPays}) }}">Modifier</a>
+                    <a role="button" class="btn btn-primary" href="{{ path('app_pays_delete', {'idPays': pay.idPays}) }}">Supprimer</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +34,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_pays_new') }}">Create new</a>
+    
 {% endblock %}
