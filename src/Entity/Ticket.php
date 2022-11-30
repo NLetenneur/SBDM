@@ -38,7 +38,7 @@ class Ticket
      *
      * @ORM\Column(name="DATE_VENTE", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
      */
-    private $dateVente = 'CURRENT_TIMESTAMP';
+    private $dateVente = NULL;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -62,6 +62,7 @@ class Ticket
     public function __construct()
     {
         $this->idArticle = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateVente = new \DateTime();
     }
 
     public function getAnnee(): ?int
@@ -89,10 +90,10 @@ class Ticket
     /**
      * @return Collection<int, Article>
      */
-    public function getIdArticle(): Collection
-    {
-        return $this->idArticle;
-    }
+    //public function getIdArticle(): Collection
+    //{
+    //    return $this->idArticle;
+   // }
 
     public function addIdArticle(Article $idArticle): self
     {

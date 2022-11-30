@@ -82,11 +82,11 @@ class Article
     private $idType;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+    * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Ticket", mappedBy="idArticle")
      */
-    private $annee = array();
+   private $annee = array();
 
     /**
      * Constructor
