@@ -19,7 +19,7 @@ class ArticleType extends AbstractType
             ->add('idCouleur')
             ->add('idMarque')
             ->add('idType')
-            ->add('annee')
+ //          ->add('annee')
         ;
     }
 

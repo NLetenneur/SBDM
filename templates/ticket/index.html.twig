@@ -4,25 +4,27 @@
 
 {% block body %}
     <h1>Ticket index</h1>
-
-    <table class="table table-bordered table-hover">
+    <a role="button" class="btn btn-info mb-2" href="{{ path('app_ticket_new') }}">Create new</a>
+    <div style="height: 400px" class="table-responsive d-inline-block" overflow: auto>
+    <table class="table table-bordered border-light table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>Annee</th>
-                <th>NumeroTicket</th>
-                <th>DateVente</th>
-                <th>actions</th>
+                <th class="text-center">Annee</th>
+                <th class="text-center">NumeroTicket</th>
+                <th class="text-center">DateVente</th>
+                <th class="text-center">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for ticket in tickets %}
             <tr>
-                <td>{{ ticket.annee }}</td>
-                <td>{{ ticket.numeroTicket }}</td>
-                <td>{{ ticket.dateVente ? ticket.dateVente|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_ticket_show', {'annee': ticket.annee}) }}">show</a>
-                    <a href="{{ path('app_ticket_edit', {'annee': ticket.annee}) }}">edit</a>
+                <td class="text-center">{{ ticket.annee }}</td>
+                <td class="text-center">{{ ticket.numeroTicket }}</td>
+                <td class="text-center">{{ ticket.dateVente ? ticket.dateVente|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="text-center">
+                    <a role="button" class="btn btn-light" href="{{ path('app_ticket_show', {'annee': ticket.annee}) }}">Voir</a>
+                    <a role="button" class="btn btn-info" href="{{ path('app_ticket_edit', {'annee': ticket.annee}) }}">Modifier</a>
+                    <a role="button" class="btn btn-primary" href="{{ path('app_ticket_edit', {'annee': ticket.annee}) }}">Supprimer</a>
                 </td>
             </tr>
         {% else %}
@@ -32,6 +34,6 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
 
-    <a href="{{ path('app_ticket_new') }}">Create new</a>
 {% endblock %}

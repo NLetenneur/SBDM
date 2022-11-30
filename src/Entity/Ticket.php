@@ -109,5 +109,7 @@ class Ticket
 
         return $this;
     }
-
+    public function __toString() {
+        return $this->numeroTicket;
+    }
 }

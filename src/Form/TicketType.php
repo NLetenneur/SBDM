@@ -15,7 +15,7 @@ class TicketType extends AbstractType
             ->add('annee')
             ->add('numeroTicket')
             ->add('dateVente')
-            ->add('idArticle')
+            //->add('idArticle')
         ;
     }
 

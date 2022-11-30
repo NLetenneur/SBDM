@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Modifier une marque</h1>
 
-    {{ include('marque/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('marque/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a role="button" class="btn btn-info mb-2" href="{{ path('marque_index') }}">back to list</a>
+    <a role="button" class="btn btn-info mb-2" href="{{ path('marque_index') }}">Retour à la liste</a>
 
     {{ include('marque/_delete_form.html.twig') }}
 {% endblock %}

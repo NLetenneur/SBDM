@@ -9,19 +9,19 @@
     <table class="table table-bordered border-light table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>Id de la marque</th>
-                <th>Nom de la marque</th>
-                <th>Fabriquant</th>
-                <th>actions</th>
+                <th class="text-center">Id de la marque</th>
+                <th class="text-center">Nom de la marque</th>
+                <th class="text-center">Fabriquant</th>
+                <th class="text-center">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for marque in marques %}
             <tr>
-                <td>{{ marque.idMarque }}</td>
-                <td>{{ marque.nomMarque }}</td>
-                <td>{{ marque.idFabricant }}</td>
-                <td>
+                <td class="text-center">{{ marque.idMarque }}</td>
+                <td class="text-center">{{ marque.nomMarque }}</td>
+                <td class="text-center">{{ marque.idFabricant }}</td>
+                <td class="text-center">
                     <a role="button" class="btn btn-light" href="{{ path('app_marque_show', {'idMarque': marque.idMarque}) }}">Voir</a>
                     <a role="button" class="btn btn-info" href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">Modifier</a>
                     <a role="button" class="btn btn-primary" href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">Supprimer</a>
