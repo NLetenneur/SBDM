@@ -24,7 +24,7 @@
                 <td class="text-center">
                     <a role="button" class="btn btn-light" href="{{ path('app_marque_show', {'idMarque': marque.idMarque}) }}">Voir</a>
                     <a role="button" class="btn btn-info" href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">Modifier</a>
-                    <a role="button" class="btn btn-primary" href="{{ path('app_marque_edit', {'idMarque': marque.idMarque}) }}">Supprimer</a>
+                    <a role="button" class="btn btn-primary" href="{{ path('app_marque_delete', {'idMarque': marque.idMarque}) }}">Supprimer</a>
                 </td>
             </tr>
         {% else %}
