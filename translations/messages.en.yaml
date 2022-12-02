@@ -1,0 +1,22 @@
+Accueil: Home
+Gestion des pays: Countries
+Gestion des continents: Continents
+Gestion des marques: Brands
+Gestion des articles: Products
+Gestion des tickets: Bills
+Liste des continents: Continents' index
+Liste des pays: Countries' index
+Liste des marques: Brands' index
+Liste des articles: Products' index
+Liste des tickets: Bills' index
+nomContinent: Name
+nomPays : Name
+idContinent: Continent
+Retour à la liste: Back to list
+ajouter: Add
+code: Id
+nom: Name
+ajouter continent: Add continent
+enregistrer: Save
+modification continent: Continent update
+suppression confirmation: Are you sure you want to delete?

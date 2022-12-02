@@ -3,7 +3,7 @@
 {% block title %}Tickets{% endblock %}
 
 {% block body %}
-    <h1>Liste des tickets</h1>
+    <h1>{% trans %}Liste des tickets{% endtrans %}</h1>
     <a role="button" class="btn btn-info mb-2" href="{{ path('app_ticket_new') }}">Nouveau ticket</a>
     <div style="height: 400px" class="table-responsive d-inline-block" overflow: auto>
     <table class="table table-bordered border-light table-hover">
