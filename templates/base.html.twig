@@ -21,22 +21,45 @@
     <body class="mx-5">
     <header>
         <img src="{{ asset('assets/img/header.png') }}" class="img-fluid" alt="header du site Société des bières du monde">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-            <a class="navbar-brand" href='{{ path("main") }}'>{% trans %}Accueil{% endtrans %}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ path("main") }}">{% trans %}Accueil{% endtrans %}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{{ path('app_continent_index') }}">{% trans %}Gestion des continents{% endtrans %}</a>
-                <a class="nav-item nav-link" href="{{ path('pays_index') }}">{% trans %}Gestion des pays{% endtrans %}</a>
-                <a class="nav-item nav-link" href="{{ path('marque_index') }}">{% trans %}Gestion des marques{% endtrans %}</a>
-                <a class="nav-item nav-link" href="{{ path('article_index') }}">{% trans %}Gestion des articles{% endtrans %}</a>
-                <a class="nav-item nav-link " href="{{ path('ticket_index') }}">{% trans %}Gestion des tickets{% endtrans %}</a>
-                </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_continent_index') }}">{% trans %}Gestion des continents{% endtrans %}</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('pays_index') }}">{% trans %}Gestion des pays{% endtrans %}</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('marque_index') }}">{% trans %}Gestion des marques{% endtrans %}</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('article_index') }}">{% trans %}Gestion des articles{% endtrans %}</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('ticket_index') }}">{% trans %}Gestion des tickets{% endtrans %}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% trans %}Langues{% endtrans %}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ path('langue_francais') }}"><img src="{{ asset('assets/img/France.png') }}" class="img-fluid" alt="drapeau français" style="height:20px;">
+                                    Français</a></li>
+                        <li><a class="dropdown-item" href="{{ path('langue_anglais') }}"><img src="{{ asset('assets/img/RU.png') }}" class="img-fluid" alt="drapeau anglais" style="height:20px;">
+                                    Anglais</a></li>
+                    </ul>
+                    </li>
+                </ul>
+             </div>
             </div>
         </nav>
-    </header>
+     </header>
         <main class="p-5">
         {% block body %}{% endblock %}
     <footer class="container-fluid bg-dark dark fixed-bottom">
