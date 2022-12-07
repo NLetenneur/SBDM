@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 /**
  * Typebiere
@@ -10,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="typebiere")
  * @ORM\Entity (repositoryClass="App\Repository\TBiereRepository")
  */
+#[ApiResource]
+
 class Typebiere
 {
     /**

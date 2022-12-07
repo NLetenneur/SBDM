@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 /**
  * Fabricant
@@ -10,6 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="fabricant")
  * @ORM\Entity
  */
+#[ApiResource]
+
 class Fabricant
 {
     /**

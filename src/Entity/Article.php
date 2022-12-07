@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -12,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="article", indexes={@ORM\Index(name="FK_ARTICLE_TYPEBIERE", columns={"ID_TYPE"}), @ORM\Index(name="FK_ARTICLE_COULEUR", columns={"ID_COULEUR"}), @ORM\Index(name="FK_ARTICLE_MARQUE", columns={"ID_MARQUE"})})
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
+#[ApiResource]
 class Article
 {
     /**

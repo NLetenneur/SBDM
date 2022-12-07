@@ -6,6 +6,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 /**
  * Ticket
@@ -13,6 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="ticket")
  * @ORM\Entity(repositoryClass="App\Repository\TicketRepository")
  */
+#[ApiResource]
+
 class Ticket
 {
     /**

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+
 
 /**
  * Marque
@@ -10,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="marque", indexes={@ORM\Index(name="FK_MARQUE_FABRICANT", columns={"ID_FABRICANT"}), @ORM\Index(name="FK_MARQUE_PAYS", columns={"ID_PAYS"})})
  * @ORM\Entity(repositoryClass="App\Repository\MarqueRepository")
  */
+#[ApiResource]
+
 class Marque
 {
     /**
